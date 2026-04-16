@@ -69,14 +69,14 @@ model = Sequential([
     Flatten(),                                  # 2D to 1D une longue liste
     Dense(128, activation='relu'),              # Neurones, ils font le liens entre personne trouvés et le nbr de persnne
     Dropout(0.5),                               # Contre l'overfitting
-    Dense(4, activation='softmax')              # 4 sortie pour 4 classes : 0, 1, 2, 3
+    Dense(4, activation='softmax')              # 4 sorties pour 4 classes : 0, 1, 2, 3
 ])
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # --- 4. ENTRAÎNEMENT ---
 print("\nDébut de l'entraînement...")
-history = model.fit(X_t, y_t, epochs=10, batch_size=32, validation_data=(X_v, y_v))
+history = model.fit(X_t, y_t, epochs=30, batch_size=32, validation_data=(X_v, y_v))
 
 # --- 5. PRÉDICTION & KAGGLE SUBMISSION ---
 print("\nGénération des prédictions pour Kaggle...")
@@ -99,8 +99,8 @@ submission = pd.DataFrame({
 
 # Affichage des données du model caractéristique
 
-submission.to_csv('my_submission.csv', index=False)
-print("Fichier 'my_submission.csv' prêt !")
+submission.to_csv('my_submission_v5.csv', index=False)
+print("Fichier 'my_submission_v5.csv' prêt !")
 
 print(model.summary())
 
