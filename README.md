@@ -7,7 +7,7 @@ The goal of this project is to accurately classify room occupancy (from 0 to 3 p
 
 ---
 
-## 🛰️ Problem Statement & Dataset
+## Problem Statement & Dataset
 The system analyzes snapshots of radar signals in the **delay-Doppler domain**, which represent reflections from moving targets at specific distances and velocities:
 * **Doppler frequency shifts** correlate with the speed and direction of target motion.
 * **Signal delays** correlate with the distance of the targets from the receiver.
